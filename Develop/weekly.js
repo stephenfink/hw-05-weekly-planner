@@ -87,6 +87,16 @@ $("#currentDay").text(arrayDate[0] + ", " + arrayDate[1] + " " + arrayDate[2]);
     }
 }
 colors();
+$(".btn").click(function(){
+    var btnNum = this.id.match(/\d+/g).map(Number);
+    
+    events[btnNum - 1].event = this.previousElementSibling.value;
+    
+    localStorage.setItem("events", JSON.stringify(events));
+});
+
+
+
     // the css has some colors madde already to do this but when and how it is use is what code here needs
 
 
@@ -110,9 +120,6 @@ colors();
     //This will be an event listener for clicking save to save data to storage
     //the storage will be locked into that time frame
 //THEN the text for that event is saved in local storage
-
-
-
 
 
 
