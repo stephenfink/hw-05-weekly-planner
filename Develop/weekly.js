@@ -6,7 +6,7 @@
 //This puts the date into and time for the use of changing colors.
 var getDate = new Date().toString();
 var arrayDate = getDate.split(" ");
-
+var events;
 //WHEN I view the timeblocks for that day
     var currentTime = arrayDate[4].match(/\d+/g).map(Number);
     //it will use the current time as data from a time scource 
@@ -15,7 +15,78 @@ var arrayDate = getDate.split(" ");
 $("#currentDay").text(arrayDate[0] + ", " + arrayDate[1] + " " + arrayDate[2]);
 
 
+
+    // this is for events saving for local storage 
+
+    function renderEvents(){
+        events = JSON.parse(localStorage.getItem("#eventsInput"));
+    
+        if( events === null){
+            events = [
+            {//i-index is 0 for 6 am
+                event: ""},
+            {//i-index is 1 for 7 am
+                event: ""},
+            {//i-index is 2 for 8 am
+                event: ""},
+            {//i-index is 3 for 9 am
+                event: ""},
+            {//i-index is 4 for 10 am
+                event: ""},
+            {//i-index is 5 for 11 am
+                event: ""},
+            {//i-index is 6 for 12 pm
+                event: ""},
+            {//i-index is 7 for 1 pm
+                event: ""},
+            {//i-index is 8 for 2 pm
+                event: ""},
+            {//i-index is 9 for 3 pm
+                event: ""},
+            {//i-index is 10  for 4 pm
+                event: ""}
+            ];
+            localStorage.setItem("#eventInput", JSON.stringify(events));
+        } else{ 
+          // this is for rending for storage 
+            for(var i = 0; i < events.length; i++){
+                $("#eventInput"+(i+1)).attr("value", events[i].event);
+            };
+        };
+    };
+    renderEvents();
 //THEN each timeblock is color coded to indicate whether it is in the past, present, or future
+
+    function colors(){
+        for(var i = 0; i<events.length; i++){
+            var sel = $("#eventInput" + (i+1));
+
+            if(sel[0].previousElementSibling.attributes[1].value < currentTime[0]){
+
+                sel[0].classList.add("past");
+                sel[0].previousElementSibling.classList.add("past");
+                sel[0].classList.add("past");
+                sel[0].previousElementSibling.classList.add("past");
+    
+            }else if(selector[0].previousElementSibling.attributes[1].value == currentTime[0]){
+    
+                sel[0].classList.add("present");
+                sel[0].previousElementSibling.classList.add("present");
+                sel[0].classList.add("present");
+                sel[0].previousElementSibling.classList.add("present");
+    
+    
+            }else{
+    
+                sel[0].classList.add("future");
+                sel[0].previousElementSibling.classList.add("future");
+                sel[0].classList.add("future");
+                sel[0].previousElementSibling.classList.add("future");
+    
+            }
+    }
+}
+colors();
     // the css has some colors madde already to do this but when and how it is use is what code here needs
 
 
