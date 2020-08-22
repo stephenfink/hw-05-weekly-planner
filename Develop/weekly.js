@@ -11,6 +11,10 @@ var arrayDate = getDate.split(" ");
     var currentTime = arrayDate[4].match(/\d+/g).map(Number);
     //it will use the current time as data from a time scource 
 
+// this gets the current day from the currentTime var
+$("#currentDay").text(arrayDate[0] + ", " + arrayDate[1] + " " + arrayDate[2]);
+
+
 //THEN each timeblock is color coded to indicate whether it is in the past, present, or future
     // the css has some colors madde already to do this but when and how it is use is what code here needs
 
