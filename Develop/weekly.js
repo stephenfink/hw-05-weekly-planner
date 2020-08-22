@@ -2,20 +2,25 @@
 
 //WHEN I open the planner : when loaded
 
-//THEN the current day is displayed at the top of the calendar: as current day
-
-
-//WHEN I scroll down: how many hours to use within one day
-
-//THEN I am presented with timeblocks for standard business hours
-    // for each hour: 12 hour work flow to set for over time or change of time worked
+//THEN the current day is displayed at the top of the calendar: as current day: 
+//This puts the date into and time for the use of changing colors.
+var getDate = new Date().toString();
+var arrayDate = getDate.split(" ");
 
 //WHEN I view the timeblocks for that day
-    // this will start at 6 am to 6 pm 
+    var currentTime = arrayDate[4].match(/\d+/g).map(Number);
     //it will use the current time as data from a time scource 
 
 //THEN each timeblock is color coded to indicate whether it is in the past, present, or future
     // the css has some colors madde already to do this but when and how it is use is what code here needs
+
+
+//WHEN I scroll down: how many hours to use within one day: checked by HTML
+
+//THEN I am presented with timeblocks for standard business hours
+    // for each hour: 12 hour work flow to set for over time or change of time worked
+
+
 
 
 
