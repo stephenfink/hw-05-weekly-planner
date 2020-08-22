@@ -56,7 +56,7 @@ $("#currentDay").text(arrayDate[0] + ", " + arrayDate[1] + " " + arrayDate[2]);
     };
     renderEvents();
 //THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-
+// this changes the colors base on time, 
     function colors(){
         for(var i = 0; i<events.length; i++){
             var sel = $("#eventInput" + (i+1));
