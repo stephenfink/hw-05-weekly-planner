@@ -12,4 +12,4 @@ Thank you for your time,
  Author: Stephen Fink
  a link to final product 
  
- [Click me]("https://stephenfink.github.io/hw-05-weekly-planner/.)
+ [Click me](https://stephenfink.github.io/hw-05-weekly-planner/.)
