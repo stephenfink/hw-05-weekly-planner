@@ -10,3 +10,4 @@ However the color of time pass was changed into a darker color to read text.
 Thank you for your time,
 
  Author: Stephen Fink
+ a link to final product <link href="https://stephenfink.github.io/hw-05-weekly-planner/.">click me
